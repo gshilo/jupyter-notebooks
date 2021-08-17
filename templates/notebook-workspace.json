@@ -95,28 +95,6 @@
                                 }
                             }
                         ],
-                        "initContainers": [
-                            {
-                                "name": "setup-volume",
-                                "image": "${NOTEBOOK_IMAGE}",
-                                "command": [
-                                    "setup-volume.sh",
-                                    "/opt/app-root",
-                                    "/mnt/app-root"
-                                ],
-                                "resources": {
-                                    "limits": {
-                                        "memory": "256Mi"
-                                    }
-                                },
-                                "volumeMounts": [
-                                    {
-                                        "name": "data",
-                                        "mountPath": "/mnt"
-                                    }
-                                ]
-                            }
-                        ],
                         "containers": [
                             {
                                 "name": "notebook",
